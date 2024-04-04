@@ -1,1 +1,3 @@
 # ProteoSynth
+
+add readme 
