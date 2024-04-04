@@ -9,3 +9,7 @@ Create virtual environment
 ` python3 -m venv env `
 
 ` source env/bin/activate `
+
+To Run this flask app:
+
+` python3 app.py `
