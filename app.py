@@ -1,9 +1,6 @@
 from flask import Flask, render_template, request, send_file
 import random
 import subprocess
-import sys
-
-sys.path.insert(0, "../../")
 
 app = Flask(__name__)
 
