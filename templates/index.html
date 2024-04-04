@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protein Data Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-image: url('/nature.jpg');
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        input[type="number"],
+        input[type="text"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: none;
+            background-color: #f4f4f4;
+            font-size: 1.2em;
+        }
+        input[type="submit"] {
+            background-color: #ff0066;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Protein Data Generator</h1>
+        <form method="post" action="/" enctype="multipart/form-data">
+            <label for="num_lines">Number of Sequences:</label>
+            <input type="number" id="num_lines" name="num_lines" required><br>
+
+            <label for="exclude_aa">Amino Acid to Exclude (Single-letter code):</label>
+            <input type="text" id="exclude_aa" name="exclude_aa" required><br>
+
+            <input type="submit" value="Generate Protein Data">
+        </form>
+    </div>
+</body>
+</html>
