@@ -33,10 +33,13 @@ AA_CODES = {
     "V": "VAL",
 }
 
-AA_LIST = list(AA_CODES.values()) + ["UNK"]
+# AA_LIST = list(AA_CODES.values()) + ["UNK"]
+# AA_LIST = list(AA_CODES.values()) 
 
 def generate_line(exclude_aa=None):
-    aa_list = [aa for aa in AA_LIST if aa != exclude_aa]
+    # aa_list = [aa.value() for aa in AA_CODES if aa not in exclude_aa]
+    aa_list = [AA_CODES[aa] for aa in AA_CODES if aa not in exclude_aa]
+
     res_aa = random.choice(aa_list)
     phi = round(random.uniform(*PHI_RANGE), 2)
     psi = round(random.uniform(*PSI_RANGE), 2)
@@ -48,12 +51,21 @@ def generate_model(num_lines, exclude_aa):
         model_data.append(generate_line(exclude_aa))
     return model_data
 
+
+def unique_uppercase_alphabets(input_string):
+    unique_chars = set()
+    for char in input_string:
+        if char.isalpha():
+            unique_chars.add(char.upper())
+    return list(unique_chars)
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         num_lines = int(request.form["num_lines"])
         exclude_aa = request.form["exclude_aa"]
         num_models = int(request.form["num_models"])  # Retrieve num_models from the form
+        exclude_aa = unique_uppercase_alphabets(exclude_aa)
 
         zip_filename = "protein_data.zip"
         with zipfile.ZipFile(zip_filename, 'w') as zipf:
