@@ -36,19 +36,40 @@ AA_CODES = {
 # AA_LIST = list(AA_CODES.values()) + ["UNK"]
 # AA_LIST = list(AA_CODES.values()) 
 
-def generate_line(exclude_aa=None):
-    # aa_list = [aa.value() for aa in AA_CODES if aa not in exclude_aa]
-    aa_list = [AA_CODES[aa] for aa in AA_CODES if aa not in exclude_aa]
+def pick_random_phi_psi():
+    PHI_RANGE1 = (-180,-40)
+    PHI_RANGE2 = (40,100)
 
+    PSI_RANGE1 = (-180,-150)
+    PSI_RANGE2 = (-80,180)
+
+    # Randomly choose between the two phi ranges
+    if random.random() < 0.5:
+        phi = random.uniform(PHI_RANGE1[0], PHI_RANGE1[1])
+    else:
+        phi = random.uniform(PHI_RANGE2[0], PHI_RANGE2[1])
+    
+    # Randomly choose between the two psi ranges
+    if random.random() < 0.5:
+        psi = random.uniform(PSI_RANGE1[0], PSI_RANGE1[1])
+    else:
+        psi = random.uniform(PSI_RANGE2[0], PSI_RANGE2[1])
+    
+    return round(phi,2), round(psi,2)
+
+
+def generate_line(aa_list):
     res_aa = random.choice(aa_list)
-    phi = round(random.uniform(*PHI_RANGE), 2)
-    psi = round(random.uniform(*PSI_RANGE), 2)
+    # phi = round(random.uniform(*PHI_RANGE), 2)
+    # psi = round(random.uniform(*PSI_RANGE), 2)
+    phi,psi = pick_random_phi_psi()
     return "res {} phi {} psi {}".format(res_aa, phi, psi)
 
 def generate_model(num_lines, exclude_aa):
+    aa_list = [AA_CODES[aa] for aa in AA_CODES if aa not in exclude_aa]
     model_data = []
     for _ in range(num_lines):
-        model_data.append(generate_line(exclude_aa))
+        model_data.append(generate_line(aa_list))
     return model_data
 
 
