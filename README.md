@@ -1,10 +1,14 @@
 # ProteoSynth
 
-## About
+## About the repo
+...
 
-## How to use
+## How to Use
+...
 
-1.  Use this repo as:
+## How to install
+
+1.  Install from this repo as:
 
 ```
 git clone https://github.com/Pushkar1853/ProteoSynth.git 
