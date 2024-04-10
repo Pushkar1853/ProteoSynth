@@ -1,15 +1,40 @@
 # ProteoSynth
 
-Use this repo as:
+## About
 
-` git clone https://github.com/Pushkar1853/ProteoSynth.git `
+## How to use
 
-Create virtual environment  
+1. Use this repo as:
 
-` python3 -m venv env `
+```
+git clone https://github.com/Pushkar1853/ProteoSynth.git 
+```
 
-` source env/bin/activate `
+2. Create a virtual environment  
 
-To Run this flask app:
+```
+python3 -m venv env 
+source env/bin/activate
+```
 
-` python3 app.py `
+3. To Run this flask app:
+
+```
+python3 app.py
+```
+
+## Requirements:
+
+1. Packages
+* Flask == 3.0.3
+* Pip == 22.0.2
+* python == 3.10.12
+
+2. System Requirements:
+* Ubuntu == 22.04 (version)
+  
+  ```
+  (Linux OS preferably,  
+  for Windows -> use WSL
+  for MAC -> use VirtualBox)
+  ```
