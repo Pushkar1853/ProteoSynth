@@ -4,20 +4,20 @@
 
 ## How to use
 
-1. Use this repo as:
+1.  Use this repo as:
 
 ```
 git clone https://github.com/Pushkar1853/ProteoSynth.git 
 ```
 
-2. Create a virtual environment  
+2.  Create a virtual environment  
 
 ```
 python3 -m venv env 
 source env/bin/activate
 ```
 
-3. To Run this flask app:
+3.  To Run this flask app:
 
 ```
 python3 app.py
@@ -25,12 +25,12 @@ python3 app.py
 
 ## Requirements:
 
-1. Packages
+1.  Packages:
 * Flask == 3.0.3
 * Pip == 22.0.2
 * python == 3.10.12
 
-2. System Requirements:
+2.  System Requirements:
 * Ubuntu == 22.04 (version)
   
   ```
