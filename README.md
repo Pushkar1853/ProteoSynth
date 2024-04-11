@@ -1,5 +1,7 @@
 # ProteoSynth
 
+<img src="https://socialify.git.ci/Pushkar1853/ProteoSynth/image?font=Bitter&forks=1&language=1&name=1&owner=1&pattern=Floating%20Cogs&stargazers=1&theme=Auto">
+
 ## About the repo
 ProteoSynth is a tool that automates creating custom proteins of random amino acid sequences. 
 You can specify the length of sequences, amino acids to avoid in sequence, and the number of proteins to be generated.
